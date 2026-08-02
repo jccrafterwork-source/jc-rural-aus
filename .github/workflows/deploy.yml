@@ -1,4 +1,4 @@
-name: Deploy to Manus
+name: Deploy to Vercel
 
 on:
   push:
@@ -70,12 +70,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
-      - name: Deploy notification
-        run: |
-          echo "✓ Deployment triggered for commit: ${{ github.sha }}"
-          echo "✓ Branch: ${{ github.ref }}"
-          echo "✓ Author: ${{ github.actor }}"
-          echo ""
-          echo "Manus webdev will automatically detect and deploy this push."
-          echo "Visit your live site to verify the changes:"
-          echo "→ https://jcruralaus-gy2gepc3.manus.space"
+      - name: Deploy to Vercel
+        uses: vercel/action@master
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
