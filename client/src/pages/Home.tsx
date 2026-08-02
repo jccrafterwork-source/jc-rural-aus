@@ -29,6 +29,18 @@ import { Button } from "@/components/ui/button";
 
 const logoUrl = "/manus-storage/jc-rural-field-stamp-logo_0d815147.png";
 
+// UTM tracking parameters for social and business profile links
+const trackingParams = {
+  facebook: "?utm_source=jcruralaus_website&utm_medium=social&utm_campaign=engagement",
+  googleBusiness: "?utm_source=jcruralaus_website&utm_medium=business_profile&utm_campaign=engagement",
+};
+
+// Social and business profile URLs with tracking
+const socialLinks = {
+  facebook: `https://www.facebook.com/search/top/?q=JC%20RURAL%20AUS${trackingParams.facebook}`,
+  googleBusiness: `https://www.google.com/search?q=JC+Rural+AUS+Tasmania${trackingParams.googleBusiness}`,
+};
+
 const navigation = [
   { label: "Services", href: "#services" },
   { label: "Rates", href: "#rates" },
@@ -405,7 +417,7 @@ export default function Home() {
                 <a href="tel:+61459646941"><Phone aria-hidden="true" /><span><small>Call</small>0459 646 941</span></a>
                 <a href="mailto:jcruralaus@gmail.com"><Mail aria-hidden="true" /><span><small>Email</small>jcruralaus@gmail.com</span></a>
                 <span><MapPin aria-hidden="true" /><span><small>Coverage</small>Tasmania wide</span></span>
-                <a href="https://www.facebook.com/search/top/?q=JC%20RURAL%20AUS" target="_blank" rel="noreferrer"><Facebook aria-hidden="true" /><span><small>Facebook</small>JC Rural AUS</span></a>
+                <a href={socialLinks.facebook} target="_blank" rel="noreferrer"><Facebook aria-hidden="true" /><span><small>Facebook</small>JC Rural AUS</span></a>
               </div>
             </aside>
           </div>
@@ -419,6 +431,14 @@ export default function Home() {
             <span><strong>JC Rural AUS</strong><small>You relax, we get it done.</small></span>
           </div>
           <p>Farm contracting support across Tasmania.</p>
+          <div className="footer-social-links" style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+            <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="JC Rural AUS on Facebook" title="Follow us on Facebook">
+              <Facebook aria-hidden="true" style={{ width: "18px", height: "18px" }} />
+            </a>
+            <a href={socialLinks.googleBusiness} target="_blank" rel="noreferrer" aria-label="JC Rural AUS on Google Business" title="Find us on Google">
+              <MapPin aria-hidden="true" style={{ width: "18px", height: "18px" }} />
+            </a>
+          </div>
           <a href="#top" onClick={() => scrollToSection("#top")}>Back to top <ArrowRight aria-hidden="true" /></a>
         </div>
       </footer>
