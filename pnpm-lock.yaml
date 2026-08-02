@@ -237,4 +237,46 @@ importers:
         specifier: ^2.1.4
         version: 2.1.9(@types/node@24.7.0)(lightningcss@1.30.1)
 
-packages: {}
+packages:
+
+  '@hookform/resolvers@5.2.2':
+    resolution: {integrity: sha512-A/IxlMLShx3KjV/HeTcTfaMxdwy690+L/ZADoeaTltLx+CVuzkeVIPuybK3jrRfw7YZnmdKsVVHAlEPIAEUNlA==}
+    peerDependencies:
+      react-hook-form: ^7.55.0
+
+  'react-hook-form@7.64.0':
+    resolution: {integrity: sha512-EoF5vC3+vq2UGEVx+5m1wuMJjC9O0fCm3OzNQv0B6lgrO8xFrX5hRPx5cHNT7WDyHbCMNvKKVFrSGLvXRScx5g==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8 || ^17 || ^18 || ^19
+    peerDependenciesMeta:
+      react:
+        optional: true
+
+  'react@19.2.1':
+    resolution: {integrity: sha512-+hKlMtjUbL3W1aw0BEF4T3C/3Q8JlD0EV5z4xngLECaU1B6J5/bUgJL42VhEL9Yth1DuJU5LW7VLKQfHvZdqw==}
+    engines: {node: '>=0.10.0'}
+
+  'react-dom@19.2.1':
+    resolution: {integrity: sha512-FS1vHqALahnVy+N7k1Eb88EuQ1C9R+8Z6EbxzTWm8Wd+F7EL1M/C3E9+/kZc8PoMLx3xhGd34r8Vy+sOpgJVQ==}
+    engines: {node: '>=0.10.0'}
+    peerDependencies:
+      react: 19.2.1
+
+  'axios@1.12.2':
+    resolution: {integrity: sha512-AZWbKVBMnC1S7jquMwK5Z3Xe0qMI7FkONmgZCJCITYGlLiP6hzc2DrjNCKObyXHCfRYscqLxs6P1qvYeKE3WXg==}
+
+  'express@4.21.2':
+    resolution: {integrity: sha512-28HqwMuHjFtXZrnF3/dy27SJfVfqDY23ZasuidR4K3ntwCkIqnbCLwTtWM+UnURequXXQi+rbVkUZvKvN/gV7A==}
+    engines: {node: '>=14.20.0'}
+
+  'tailwindcss@4.1.14':
+    resolution: {integrity: sha512-dLd+Xz+0Bgd6hx00NltR5FVVnWRUlqXLrDI/M7V/n8C4g9blXYG5I9aL/YU1gGT/3uPTwDSMDrFqKUQYdJVJg==}
+    engines: {node: '>=18.17.0'}
+
+  'vite@7.1.9':
+    resolution: {integrity: sha512-Dc/MJYqhzOzXC8aN8F5UYrI9t/K2OxEzYPmgHMcEkA5qkLcJXsJ4Kbay8UJOaRhxLx6xaLVLBXF9g6WxPTLaXQ==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+
+  'zod@4.1.12':
+    resolution: {integrity: sha512-RZXhSVWFo7gS6fEk6/gvz4dxKWl/29T7BUuSlrqKCi28iUQKEEfHKy5wN9FfpxVSJWEsBKjFDDp+D06x9eFSDw==}
