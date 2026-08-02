@@ -210,7 +210,7 @@ export default function Home() {
                 <span>We get it done.</span>
               </h1>
               <p className="hero-intro">
-                Reliable, hardworking support for the jobs that keep a farm running smoothly —
+                Reliable, hardworking support for all farm jobs, ensuring smooth operations —
                 from fencing and livestock work to tractor operations and general farm labour.
               </p>
               <div className="hero-actions">
