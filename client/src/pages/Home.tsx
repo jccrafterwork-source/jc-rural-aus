@@ -26,6 +26,7 @@ import {
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ContactForm from "@/components/ContactForm";
 
 const logoUrl = "/manus-storage/jc-rural-field-stamp-logo_0d815147.png";
 
@@ -396,17 +397,10 @@ export default function Home() {
               <p className="eyebrow eyebrow-light">Ready when you are</p>
               <h2 id="contact-title">Tell us what needs doing.</h2>
               <p>
-                Need a reliable hand on the farm? Give JC Rural AUS a call or send through the
-                job details. We will help you work out the next step.
+                Need a reliable hand on the farm? Fill out the form below or give us a call.
+                We'll respond within 24 hours with a clear rate and next steps.
               </p>
-              <div className="contact-actions">
-                <a className="action-button action-button-primary" href="tel:+61459646941">
-                  <Phone aria-hidden="true" /> 0459 646 941
-                </a>
-                <a className="action-button action-button-ghost" href="mailto:jcruralaus@gmail.com">
-                  <Mail aria-hidden="true" /> Send an email
-                </a>
-              </div>
+              <ContactForm />
             </div>
 
             <aside className="contact-ledger" aria-label="JC Rural AUS contact details">
