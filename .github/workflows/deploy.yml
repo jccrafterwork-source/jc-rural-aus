@@ -69,12 +69,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
-
+      
       - name: Deploy to Vercel
         run: npx vercel@latest deploy --prod --yes --token="${{ secrets.VERCEL_TOKEN }}"
         env:
