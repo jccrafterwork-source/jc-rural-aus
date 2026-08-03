@@ -1,10 +1,15 @@
 {
-  "builds": [
-    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist/public" } },
-    { "src": "api/manus-storage.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/manus-storage/(.*)", "dest": "/api/manus-storage?path=$1" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "version": 2,
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "dist/public",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "functions": {
+    "api/manus-storage.js": {
+      "runtime": "nodejs22.x"
+    }
+  },
+  "rewrites": [
+    { "source": "/manus-storage/:path*", "destination": "/api/manus-storage" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
