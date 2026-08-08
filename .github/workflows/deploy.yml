@@ -64,7 +64,6 @@ jobs:
   deploy:
     needs: build-and-test
     runs-on: ubuntu-latest
-    continue-on-error: true
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     
     steps:
@@ -102,21 +101,23 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Pull Vercel environment information
+        id: vercel-pull
         if: steps.check-secrets.outputs.secrets_available == 'true'
+        continue-on-error: true
         run: vercel pull --yes --environment=production --token="${{ secrets.VERCEL_TOKEN }}"
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Build project artifacts
-        if: steps.check-secrets.outputs.secrets_available == 'true'
+        if: steps.check-secrets.outputs.secrets_available == 'true' && steps.vercel-pull.outcome == 'success'
         run: vercel build --prod --token="${{ secrets.VERCEL_TOKEN }}"
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Deploy to Vercel
-        if: steps.check-secrets.outputs.secrets_available == 'true'
+        if: steps.check-secrets.outputs.secrets_available == 'true' && steps.vercel-pull.outcome == 'success'
         run: vercel deploy --prebuilt --prod --token="${{ secrets.VERCEL_TOKEN }}"
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
