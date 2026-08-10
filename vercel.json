@@ -9,7 +9,7 @@
     }
   },
   "rewrites": [
-    { "source": "/manus-storage/:path*", "destination": "/api/manus-storage" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/manus-storage/:path*", "destination": "/api/manus-storage?path=:path*" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }
