@@ -110,7 +110,7 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Warn when Vercel project settings are unavailable
-        if: steps.check-secrets.outputs.secrets_available == 'true' && steps.vercel-pull.outcome != 'success'
+        if: steps.check-secrets.outputs.secrets_available == 'true' && steps.vercel-pull.outcome == 'failure'
         run: |
           echo "::warning::Skipping deployment because Vercel project settings could not be loaded. Check VERCEL_TOKEN, VERCEL_ORG_ID, and VERCEL_PROJECT_ID."
 
