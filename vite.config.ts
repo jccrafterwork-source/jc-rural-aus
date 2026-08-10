@@ -208,10 +208,10 @@ const isProduction = process.env.NODE_ENV === "production";
 const plugins = [
   react(),
   tailwindcss(),
-  jsxLocPlugin(),
+  !isProduction && jsxLocPlugin(),
   !isProduction && vitePluginManusRuntime(),
   !isProduction && vitePluginManusDebugCollector(),
-  vitePluginStorageProxy(),
+  !isProduction && vitePluginStorageProxy(),
 ].filter(Boolean);
 
 export default defineConfig({
