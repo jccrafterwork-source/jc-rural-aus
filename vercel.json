@@ -3,11 +3,6 @@
   "buildCommand": "pnpm run build",
   "outputDirectory": "dist/public",
   "installCommand": "pnpm install --frozen-lockfile",
-  "functions": {
-    "api/manus-storage.js": {
-      "runtime": "nodejs22.x"
-    }
-  },
   "rewrites": [
     { "source": "/manus-storage/:path*", "destination": "/api/manus-storage?path=:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
